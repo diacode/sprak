@@ -14,9 +14,10 @@
     font-size: 60px;
     text-align: center;
     .lang {
-      width: 180px;
+      width: 185px;
       &:first-child {display: inline-block;}
       display: none;
+      text-align: left;
     }
   }
  h2 {
