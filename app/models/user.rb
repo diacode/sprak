@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   belongs_to :native_language, :class_name => "Language"
+  has_and_belongs_to_many :interested_languages, 
+    :class_name => "Language", 
+    :join_table => "interests"
 end

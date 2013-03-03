@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303213539) do
+ActiveRecord::Schema.define(:version => 20130303221922) do
+
+  create_table "interests", :id => false, :force => true do |t|
+    t.integer "language_id"
+    t.integer "user_id"
+  end
+
+  add_index "interests", ["language_id"], :name => "index_interests_on_language_id"
+  add_index "interests", ["user_id"], :name => "index_interests_on_user_id"
 
   create_table "languages", :force => true do |t|
     t.string   "name"
