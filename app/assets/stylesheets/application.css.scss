@@ -9,7 +9,33 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
 
+$navbarBackgroundHighlight: rgba(255,255,255,.9);
+$btnPrimaryBackground: #1dd1c8;
+$btnPrimaryBackgroundHighlight: #098883;
 @import "bootstrap";
+
+#header {
+  li {line-height: 40px}
+  .brand img {
+    height: 30px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Text Me One', sans-serif;
+}
+.text-center {
+  text-align: center
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+  word-spacing: -3px;
+}
