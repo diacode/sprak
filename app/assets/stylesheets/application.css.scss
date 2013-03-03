@@ -27,6 +27,15 @@ $btnPrimaryBackgroundHighlight: #098883;
   }
 }
 
+#footer {
+  p {line-height: 20px;}
+  img { 
+    margin: 0 4px;
+    vertical-align: middle;
+  }
+}
+
+
 h1, h2, h3, h4 {
   font-family: 'Text Me One', sans-serif;
 }
