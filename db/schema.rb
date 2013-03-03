@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303221922) do
+ActiveRecord::Schema.define(:version => 20130303235743) do
+
+  create_table "chats", :force => true do |t|
+    t.string   "session_id"
+    t.integer  "creator_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "chats", ["creator_id"], :name => "index_chats_on_creator_id"
 
   create_table "interests", :id => false, :force => true do |t|
     t.integer "language_id"
