@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'sqlite3' # just for test 
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
