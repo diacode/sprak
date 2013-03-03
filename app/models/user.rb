@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
     :join_table => "interests"
 
   validates :native_language, :presence => true
+
+  scope :native, lambda { |lang| where("native_language_id = ?", lang.id) }
 end

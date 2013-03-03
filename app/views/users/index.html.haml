@@ -1,0 +1,12 @@
+.container
+  .row
+    .span12
+      %h1 Users
+
+      - @users.each do |user|
+        .user
+          .avatar
+          .name= link_to "#{user.first_name} #{user.last_name}", user_path(user)
+          .language= user.native_language.name
+          .actions
+            = link_to "Start conversation", "#", :class => "btn btn-primary"
