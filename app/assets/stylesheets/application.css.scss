@@ -19,7 +19,13 @@ $btnPrimaryBackgroundHighlight: #098883;
 @import "bootstrap";
 
 #header {
-  li {line-height: 40px}
+  li {
+    font-family: 'Text Me One', sans-serif;
+    line-height: 40px;
+    font-size: 16px;
+    text-transform: uppercase
+  }
+
   .brand img {
     height: 30px;
     position: relative;
@@ -28,6 +34,7 @@ $btnPrimaryBackgroundHighlight: #098883;
 }
 
 #footer {
+  margin-top: 40px;
   p {line-height: 20px;}
   img { 
     margin: 0 4px;
