@@ -18,5 +18,7 @@ group :development do
   gem 'thin'
 end
 
+gem 'opentok'
+
 # Deploy with Capistrano
 # gem 'capistrano'
