@@ -1,5 +1,5 @@
 $ ->
-  languages = ['English', 'Spanish', 'French', 'Chinese']
+  languages = ['English', 'Spanish', 'French', 'Chinese', 'German', 'Russian']
   currentLang = 0
 
   setInterval ->
