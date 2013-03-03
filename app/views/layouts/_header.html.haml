@@ -7,6 +7,5 @@
         %ul.nav.pull-right
           %li.active
             %a{:href => "#"} Home
-          %li
-            %a{:href => "#"} Sign up
+          %li= link_to "Sign up", new_user_registration_path
           %li= link_to "Login", new_user_session_path

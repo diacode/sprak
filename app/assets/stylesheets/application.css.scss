@@ -18,6 +18,19 @@ $btnPrimaryBackground: #1dd1c8;
 $btnPrimaryBackgroundHighlight: #098883;
 @import "bootstrap";
 
+a, a:visited, a:hover {
+  color: #ec006a;
+}
+
+p {
+  color: #7A7A7A;
+}
+
+label {
+  margin-top: 5px;
+  &:fist-child { margin-top: 0; }
+}
+
 #header {
   li {
     font-family: 'Text Me One', sans-serif;

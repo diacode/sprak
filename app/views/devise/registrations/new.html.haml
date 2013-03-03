@@ -1,17 +1,16 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
-= render "devise/shared/links"
+.container
+  #sign-up
+    %h2 Sign up
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+
+      = f.label :password
+      = f.password_field :password
+
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+
+      = f.submit "Sign up", class: 'btn btn-primary btn-large'
+    = render "devise/shared/links"
