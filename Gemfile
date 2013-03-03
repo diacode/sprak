@@ -19,6 +19,7 @@ group :development do
 end
 
 gem 'opentok'
+gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'
