@@ -12,5 +12,8 @@
       = f.label :password_confirmation
       = f.password_field :password_confirmation
 
+      = f.label :native_language_id
+      = f.select :native_language_id, Language.all.map { |e| [e.name, e.id] } 
+
       = f.submit "Sign up", class: 'btn btn-primary btn-large'
     = render "devise/shared/links"
