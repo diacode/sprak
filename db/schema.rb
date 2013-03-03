@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303061336) do
+ActiveRecord::Schema.define(:version => 20130303213539) do
 
   create_table "languages", :force => true do |t|
     t.string   "name"
@@ -35,9 +35,11 @@ ActiveRecord::Schema.define(:version => 20130303061336) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "online",                 :default => false
+    t.integer  "native_language_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["native_language_id"], :name => "index_users_on_native_language_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
