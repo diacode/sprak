@@ -1,0 +1,15 @@
+defaults: &defaults
+  opentok_api_key: '23136392'
+  opentok_api_secret: '0539af726c1991751dc6d52255fba15077e406f5'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
