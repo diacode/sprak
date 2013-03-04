@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require font-awesome
+ *= require select2
  *= require_tree .
  */
 
@@ -24,6 +25,10 @@ a, a:visited, a:hover {
 
 .btn.btn-primary {
   color: white;
+}
+
+.select2-container {
+  margin-bottom: 10px;
 }
 
 p {

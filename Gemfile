@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'sqlite3' # just for test 
+gem 'select2-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

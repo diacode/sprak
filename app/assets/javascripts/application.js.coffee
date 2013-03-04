@@ -1,10 +1,13 @@
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap
+#= require select2
 #= require tokbox
 #= require_tree .
 
 $ ->
+  $('select').select2()
+  
   if $("body").data("logged")
     $(window).unload -> 
       $.ajax
