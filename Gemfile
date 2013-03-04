@@ -7,6 +7,8 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'sqlite3' # just for test 
 gem 'select2-rails'
+gem 'rmagick'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

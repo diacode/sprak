@@ -1,0 +1,17 @@
+.container
+  #edit-profile
+    %h2 Edit profile
+
+    = form_for(@user) do |f|
+
+      = f.label :native_language_id
+      = f.select :native_language_id, Language.all.map { |e| [e.name, e.id] }, {}, {class: 'input-large'}
+
+      = f.label :interested_language_ids, "Languages you want to practice"
+      = f.select :interested_language_ids, Language.all.map { |e| [e.name, e.id] }, {}, {class: 'input-large', multiple: true}
+
+      = f.label :avatar, "Picture"
+      = f.file_field :avatar, class: 'input-small'
+
+      = f.submit "Save", class: 'btn btn-primary btn-large'
+

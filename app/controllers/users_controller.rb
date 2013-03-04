@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit_profile
+    @user = current_user
+  end
+
+
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to @user, :notice  => "Successfully updated profile."
+    else
+      render :action => 'edit_profile'
+    end
+  end
+
   def disconnect
     current_user.online = false
     current_user.save

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Language.create(name: 'English', country_code: 'uk')
+Language.create(name: 'English', country_code: 'us')
 Language.create(name: 'Spanish', country_code: 'es')
 Language.create(name: 'Russian', country_code: 'ru')
 Language.create(name: 'Chinese', country_code: 'cn')

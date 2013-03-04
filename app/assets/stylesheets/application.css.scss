@@ -32,7 +32,7 @@ body {
   color: white;
 }
 
-.select2-container {
+.select2-container, input[type=file] {
   margin-bottom: 10px;
 }
 

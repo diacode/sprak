@@ -2,9 +2,10 @@ Sprak::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => "sessions"}
   root to: "frontwork#home"
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :update] do
     collection do
       put 'disconnect' # for current_esr
+      get 'edit_profile' # for current_esr
     end
   end
 
