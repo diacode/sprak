@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
     # Our custom fields
-    :first_name, :last_name, :native_language_id
+    :first_name, :last_name, :native_language_id, :interested_language_ids
 
   belongs_to :native_language, :class_name => "Language"
   has_and_belongs_to_many :interested_languages, 
