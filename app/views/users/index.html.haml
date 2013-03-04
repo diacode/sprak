@@ -1,12 +1,17 @@
 .container
-  .row
-    .span12
-      %h1 Users
+  %h2 Awesome people on Språk
+  %hr
 
-      - @users.each do |user|
-        .user
-          .avatar
-          .name= link_to "#{user.first_name} #{user.last_name}", user_path(user)
-          .language= user.native_language.name
-          .actions
-            = link_to "Start conversation", chats_create_path(:guest_id => user.id), :class => "btn btn-primary", :method => :post
+  - @users.each_slice(5) do |five_users|
+    .row
+      - five_users.each do |user|
+        .span3.text-center
+          = image_tag user.avatar_url(:thumb), class: 'img-circle'
+          %h4
+            = image_tag user.native_language.flag_path(16)
+            = "#{user.first_name} #{user.last_name}"      
+
+          %p
+            = link_to chats_create_path(:guest_id => user.id), :class => "btn btn-primary btn-small", :method => :post do
+              %i.icon-facetime-video
+              Chat now
