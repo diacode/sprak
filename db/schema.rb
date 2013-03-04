@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20130304000506) do
   create_table "participants", :force => true do |t|
     t.integer  "user_id"
     t.integer  "chat_id"
-    t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
