@@ -6,7 +6,8 @@
 #= require_tree .
 
 $ ->
-  $('select').select2()
+  $('select').select2
+    allowClear: true
   
   if $("body").data("logged")
     $(window).unload -> 

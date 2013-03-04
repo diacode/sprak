@@ -1,6 +1,9 @@
-.container
-  %h2 Awesome people on Språk
-  %br
+#users.container
+  %h2.pull-left Awesome people on Språk
+  .pull-right
+    = form_tag '/users', method: :get do
+      = select_tag :language,  options_for_select(Language.all.map{ |e| [e.name, e.id] }, params[:language]), {placeholder: 'Search by language', include_blank: true}
+  .clearfix
   - @users.each_slice(5) do |five_users|
     .row
       - five_users.each do |user|
