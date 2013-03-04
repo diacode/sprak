@@ -1,6 +1,6 @@
 #profile.container
   .row
-    .span3.text-center
+    .span3.text-center.offset5
       = image_tag @user.avatar_url(:profile), class: 'img-circle'
       %h2
         = image_tag @user.native_language.flag_path(32)
@@ -9,12 +9,11 @@
         %p 
           = link_to edit_profile_users_path do
             Edit profile
-      %p
-        = link_to chats_create_path(:guest_id => @user.id), :class => "btn btn-primary", :method => :post do
-          %i.icon-facetime-video
-          &nbsp;
-          Start conversation
-    .span8
-  
-      %p
+
+      - else
+        %p
+          = link_to chats_create_path(:guest_id => @user.id), :class => "btn btn-primary", :method => :post do
+            %i.icon-facetime-video
+            &nbsp;
+            Start conversation
         

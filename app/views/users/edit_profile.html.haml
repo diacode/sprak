@@ -4,6 +4,12 @@
 
     = form_for(@user) do |f|
 
+      = f.label :first_name
+      = f.text_field :first_name, :autofocus => true
+
+      = f.label :last_name
+      = f.text_field :last_name
+
       = f.label :native_language_id
       = f.select :native_language_id, Language.all.map { |e| [e.name, e.id] }, {}, {class: 'input-large'}
 

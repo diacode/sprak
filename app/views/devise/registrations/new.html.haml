@@ -3,9 +3,6 @@
     %h2 Sign up
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
       = devise_error_messages!
-      = f.label :first_name
-      = f.text_field :first_name, :autofocus => true
-
       = f.label :email
       = f.email_field :email, :autofocus => true
 
@@ -15,14 +12,14 @@
       = f.label :password_confirmation
       = f.password_field :password_confirmation
 
+      = f.label :first_name
+      = f.text_field :first_name, :autofocus => true
+
       = f.label :native_language_id
       = f.select :native_language_id, Language.all.map { |e| [e.name, e.id] }, {}, {class: 'input-large'}
 
       = f.label :interested_language_ids, "Languages you want to practice"
       = f.select :interested_language_ids, Language.all.map { |e| [e.name, e.id] }, {}, {class: 'input-large', multiple: true}
-
-      = f.label :avatar, "Picture"
-      = f.file_field :avatar, class: 'input-small'
 
       = f.submit "Sign up", class: 'btn btn-primary btn-large'
     = render "devise/shared/links"
