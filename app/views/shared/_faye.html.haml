@@ -5,9 +5,10 @@
     var faye = new Faye.Client('http://#{request.host}:9292/faye');
     faye.subscribe("/users/#{current_user.id}", function(event) {
       if (event.event_type == "NEW_CHAT"){
-        $.globalMessenger().post({
+        msg = $.globalMessenger().post({
           message: "You have received a new chat from "+ event.from,
           type: 'info',
+          hideAfter: null,
           actions: {
             retry: {
               label: 'Accept',
