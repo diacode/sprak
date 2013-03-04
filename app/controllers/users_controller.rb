@@ -13,4 +13,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def disconnect
+    current_user.online = false
+    current_user.save
+    render :nothing => true, :status => 200, :content_type => 'text/html'
+  end
 end
