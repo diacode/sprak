@@ -3,6 +3,7 @@
   background-size: 100%;
   margin-bottom: 40px;
   height: 420px;
+  text-align: center;
 
   .box {
     width: 600px;
@@ -39,9 +40,9 @@
   }
   .btn {
     position: relative;
-    display: block;
-  font-family: 'Text Me One', sans-serif;
-  text-transform: uppercase;
+    display: inline-block;
+    font-family: 'Text Me One', sans-serif;
+    text-transform: uppercase;
     margin: -10px auto 10px auto;
   }
 }
