@@ -1,4 +1,7 @@
 class Chat < ActiveRecord::Base
-  belongs_to :creator, :class_name => "User"
   attr_accessible :session_id
+
+  belongs_to :creator, :class_name => "User"
+  has_many :participants
+  has_many :users, :through => :participants
 end
