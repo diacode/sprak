@@ -20,6 +20,7 @@ end
 
 gem 'opentok'
 gem 'devise'
+gem 'faye'
 
 # Deploy with Capistrano
 # gem 'capistrano'
