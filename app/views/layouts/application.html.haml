@@ -10,3 +10,6 @@
     = render "layouts/header"
     = yield
     = render "layouts/footer"
+
+    :javascript
+        var OPENTOK_API_KEY = "#{APP_CONFIG['opentok_api_key']}";
