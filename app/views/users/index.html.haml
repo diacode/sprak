@@ -7,13 +7,13 @@
   - @users.each_slice(5) do |five_users|
     .row
       - five_users.each do |user|
-        .span3.text-center
-          = image_tag user.avatar_url(:thumb), class: 'img-circle'
+        .span2.text-center
+          .avatar= image_tag user.avatar_url(:thumb), class: 'img-circle'
           %h4
             = image_tag user.native_language.flag_path(16)
             = "#{user.first_name} #{user.last_name}"      
 
           %p
-            = link_to chats_create_path(:guest_id => user.id), :class => "btn btn-primary btn-small", :method => :post do
+            = link_to chats_create_path(:guest_id => user.id), :class => "btn btn-primary btn-mini", :method => :post do
               %i.icon-facetime-video
               Chat now
