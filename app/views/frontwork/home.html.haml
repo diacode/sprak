@@ -6,10 +6,10 @@
         %span.lang English
       %h2 Find a native speaker, start talking, have fun. 
 
-      %button.btn.btn-primary.btn-large
-        Start now
+      = link_to users_index_path, :class => "btn btn-primary btn-large" do
+        Start now 
         %i.icon-chevron-right
-
+      
 .container
   #features.row
     .span4

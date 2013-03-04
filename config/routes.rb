@@ -4,4 +4,7 @@ Sprak::Application.routes.draw do
 
   get "users/index"
   match "users/:id/show" => "users#show", :via => :get, :as => :user
+
+  post 'chats/create'
+  match "chats/:id/show" => "chats#show", :via => :get, :as => :chat
 end

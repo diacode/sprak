@@ -1,0 +1,33 @@
+// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chat_view{
+  margin-top:120px;
+}
+
+#screens_wrapper{
+  position:relative;
+  width:900px;
+}
+
+#screen_1_wrapper{
+  background-color:#ddd;
+  width:900px;
+  height:506px;
+}
+
+#screen_1{
+  width:900px;
+  height:506px;
+  margin:0 auto;
+}
+
+#screen_2{
+  width:200px;
+  height:112px;
+  margin: 0 auto;
+  position:absolute;
+  bottom:0;
+  right:0;
+}

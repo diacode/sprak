@@ -1,2 +1,2 @@
 %h1= "#{@user.first_name} #{@user.last_name}"
-%p= link_to "Start conversation", "#", :class => "btn btn-primary"
+%p= link_to "Start conversation", chats_create_path(:guest_id => @user.id), :class => "btn btn-primary", :method => :post
