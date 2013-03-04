@@ -13,7 +13,8 @@ $ ->
     extraClasses: 'messenger-fixed messenger-theme-air messenger-on-bottom messenger-on-right'
   }
 
-  $('select').select2()
+  $('select').select2
+    allowClear: true
   
   if $("body").data("logged")
     $(window).unload -> 

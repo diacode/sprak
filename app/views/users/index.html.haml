@@ -1,12 +1,19 @@
-.container
-  .row
-    .span12
-      %h1 Users
+#users.container
+  %h2.pull-left Awesome people on Språk
+  .pull-right
+    = form_tag '/users', method: :get do
+      = select_tag :language,  options_for_select(Language.all.map{ |e| [e.name, e.id] }, params[:language]), {placeholder: 'Search by language', include_blank: true}
+  .clearfix
+  - @users.each_slice(5) do |five_users|
+    .row
+      - five_users.each do |user|
+        .span2.text-center
+          .avatar= image_tag user.avatar_url(:thumb), class: 'img-circle'
+          %h4
+            = image_tag user.native_language.flag_path(16)
+            = "#{user.first_name} #{user.last_name}"      
 
-      - @users.each do |user|
-        .user
-          .avatar
-          .name= link_to "#{user.first_name} #{user.last_name}", user_path(user)
-          .language= user.native_language.name
-          .actions
-            = link_to "Start conversation", chats_create_path(:guest_id => user.id), :class => "btn btn-primary", :method => :post
+          %p
+            = link_to chats_create_path(:guest_id => user.id), :class => "btn btn-primary btn-mini", :method => :post do
+              %i.icon-facetime-video
+              Chat now

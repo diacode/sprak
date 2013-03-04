@@ -8,9 +8,9 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require select2
  *= require_self
  *= require font-awesome
- *= require select2
  *= require messenger
  *= require messenger-theme-air
  *= require_tree .
@@ -38,6 +38,10 @@ body {
   margin-bottom: 10px;
 }
 
+.select2-results .select2-highlighted {
+  background: #1dd1c8;
+}
+
 p {
   color: #7A7A7A;
 }
@@ -62,8 +66,16 @@ label {
   }
 }
 
+#footer-separator {
+  background: url(footer-separator.png);
+  width: 100%;
+  height: 15px;
+  margin-top: 50px;
+}
 #footer {
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
   p {line-height: 20px;}
   img { 
     margin: 0 4px;
