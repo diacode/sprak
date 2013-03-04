@@ -5,14 +5,24 @@
         %a.brand{:href => "/"}
           = image_tag "logo2.png"
         %ul.nav.pull-right
-          %li.active
-            %a{:href => "#"} Home
+          %li{class: ("active" if action_name == 'home')}
+            = link_to root_path do
+              %i.icon-home
+              Home
           - if !user_signed_in?
             %li= link_to "Sign up", new_user_registration_path
             %li= link_to "Login", new_user_session_path
           - else
-            %li
+            %li{class: ("active" if controller_name == 'users' and action_name == 'index')}
+              = link_to users_path do
+                %i.icon-group
+                People
+            %li{class: ("active" if controller_name == 'users'and action_name != 'index')}
               = link_to user_path(id: current_user.id) do
                 %i.icon-user
                 Me
-            %li= link_to "Logout", destroy_user_session_path, :method => :delete
+
+            %li
+              = link_to destroy_user_session_path, :method => :delete do
+                %i.icon-off
+                Logout
