@@ -1,0 +1,11 @@
+= javascript_include_tag "http://#{request.host}:9292/faye.js" 
+:javascript
+  // TODO: make the channels secure
+  $(function() {
+    var faye = new Faye.Client('http://#{request.host}:9292/faye');
+    faye.subscribe("/users", function(event) {
+      alert('yo')
+      console.debug(event);
+    });
+  });
+

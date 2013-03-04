@@ -11,5 +11,7 @@
     = yield
     = render "layouts/footer"
 
-    :javascript
+    - if user_signed_in?
+      = render "shared/faye"
+      :javascript
         var OPENTOK_API_KEY = "#{APP_CONFIG['opentok_api_key']}";
