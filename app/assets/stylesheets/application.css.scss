@@ -23,6 +23,11 @@ a, a:visited, a:hover {
   color: #ec006a;
 }
 
+body {
+  padding-top: 60px;
+  &.home { padding-top: 0}
+}
+
 .btn.btn-primary {
   color: white;
 }

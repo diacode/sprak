@@ -1,2 +1,9 @@
-%h1= "#{@user.first_name} #{@user.last_name}"
-%p= link_to "Start conversation", chats_create_path(:guest_id => @user.id), :class => "btn btn-primary", :method => :post
+.container
+  %h2
+    = image_tag @user.native_language.flag_path(32)
+    = "#{@user.first_name} #{@user.last_name}"
+  %p
+    = link_to chats_create_path(:guest_id => @user.id), :class => "btn btn-primary", :method => :post do
+      %i.icon-facetime-video
+      &nbsp;
+      Start conversation

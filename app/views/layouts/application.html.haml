@@ -6,7 +6,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body{:data => {:logged => user_signed_in?.to_s} }
+  %body{:data => {:logged => user_signed_in?.to_s}, class: ('home' if action_name == 'home') }
     = render "layouts/header"
     = yield
     = render "layouts/footer"
