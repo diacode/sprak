@@ -1,7 +1,6 @@
 .container
   %h2 Awesome people on Språk
-  %hr
-
+  %br
   - @users.each_slice(5) do |five_users|
     .row
       - five_users.each do |user|
