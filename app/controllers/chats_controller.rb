@@ -9,10 +9,12 @@ class ChatsController < ApplicationController
     session_id = @opentok.create_session('localhost').session_id
 
     # Create our chat object
-    chat = Chat.create(:session_id => session_id)
+    chat = Chat.create(:session_id => session_id, :creator_id => current_user.id)
     
     chat.users << current_user
     chat.users << guest
+
+    chat.notify(guest)
 
     redirect_to chat_url(chat)    
   end

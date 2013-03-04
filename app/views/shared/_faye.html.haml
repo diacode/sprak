@@ -3,9 +3,27 @@
   // TODO: make the channels secure
   $(function() {
     var faye = new Faye.Client('http://#{request.host}:9292/faye');
-    faye.subscribe("/users", function(event) {
-      alert('yo')
-      console.debug(event);
+    faye.subscribe("/users/#{current_user.id}", function(event) {
+      if (event.event_type == "NEW_CHAT"){
+        $.globalMessenger().post({
+          message: "You have received a new chat from "+ event.from,
+          type: 'info',
+          actions: {
+            retry: {
+              label: 'Accept',
+              action: function() {
+                location.href = event.path;
+              }
+            },
+            cancel: {
+              action: function() {
+                return msg.cancel();
+              }
+            }
+          }
+
+        });
+      }
     });
   });
 
